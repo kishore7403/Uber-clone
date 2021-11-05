@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import tw from "tailwind-styled-components"
 import Map from "./components/Map"
+import Link from "next/link"
 
 export default function Home(){
   return (
@@ -16,6 +17,25 @@ export default function Home(){
 
         </Profile>
       </Header>
+      <ActionButtons>
+        <Link href="/search">
+        <ActionButton>
+          <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png"/>
+          Ride
+        </ActionButton>
+        </Link>
+        <ActionButton>
+        <ActionButtonImage src="https://i.ibb.co/n776JLm/bike.png"/>
+          Wheels
+        </ActionButton>
+        <ActionButton>
+        <ActionButtonImage src="https://i.ibb.co/5RjchBg/uberschedule.png" />
+          reserve
+        </ActionButton>
+      </ActionButtons>
+      <InputButton>
+        Where to?
+      </InputButton>
     </ActionItems>
     </Wrapper>
   )
@@ -46,3 +66,17 @@ mr-4
 const UserImage=tw.img`
 h-12 w-12 rounded-full border border-gray-300 p-px
 ` 
+
+const ActionButtons=tw.div`
+flex
+`
+const ActionButton=tw.div`
+flex flex-col flex-1 justify-center items-center bg-gray-200 flex-1 m-1 h-32 rounded-lg transform hover:scale-105 transition text-xl cursor-pointer
+`
+
+const ActionButtonImage=tw.img`
+h-3/5
+`
+const InputButton=tw.div`
+flex h-20 bg-gray-200 text-xl p-4 mt-4 items-center rounded-lg
+`
