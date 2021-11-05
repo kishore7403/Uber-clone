@@ -9,7 +9,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia2lzaG9yZTc0MDMiLCJhIjoiY2t2bTJvNW1tMGRmbjJ0c
 const Map=()=>{
     
         useEffect(() => {
-          map.current = new mapboxgl.Map({
+          const map = new mapboxgl.Map({
           container: "map",
           style: 'mapbox://styles/mapbox/streets-v11',
           center: [80.270721,13.082680],
