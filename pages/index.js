@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import tw from "tailwind-styled-components"
-import Map from "./components/Map"
+import Map from "./components/Map.js"
 import Link from "next/link"
 
 export default function Home(){
@@ -18,7 +18,7 @@ export default function Home(){
         </Profile>
       </Header>
       <ActionButtons>
-        <Link href="/search">
+        <Link href="/search" passHref={true}>
         <ActionButton>
           <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png"/>
           Ride

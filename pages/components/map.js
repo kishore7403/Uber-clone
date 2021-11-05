@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect } from "react"
 import tw from "tailwind-styled-components"
 import "mapbox-gl/dist/mapbox-gl.css"
-import mapboxgl from 'mapbox-gl'
+import mapboxgl from '!mapbox-gl'
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2lzaG9yZTc0MDMiLCJhIjoiY2t2bTJvNW1tMGRmbjJ0cWZ0dnFpejI2eiJ9.9PbfrFri4MfKrWOSZnDODw';
 
@@ -21,8 +21,10 @@ const Map=()=>{
 
         </Wrapper>
     )
+
 }
+export default Map;
+
 const Wrapper=tw.div`
 flex-1
 `
-export default Map;
