@@ -4,8 +4,8 @@ import Link from "next/link"
 
 const search = () => {
 
-        const[pickup,setPickup]=useState("");
-        const[dropof,setdropof]=useState("");
+        const[pickup,setPickup]=useState();
+        const[dropof,setdropof]=useState();
     return (
         <Wrapper>
             <ButtonContainer>
