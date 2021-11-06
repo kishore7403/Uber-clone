@@ -1,8 +1,11 @@
-import React from 'react'
+import {useState} from 'react'
 import tw from "tailwind-styled-components"
 import Link from "next/link"
 
 const search = () => {
+
+        const[pickup,setPickup]=useState("");
+        const[dropof,setdropof]=useState("");
     return (
         <Wrapper>
             <ButtonContainer>
@@ -17,8 +20,14 @@ const search = () => {
                     <Square src="https://img.icons8.com/windows/50/000000/square-full.png"/>
                 </FromToIcons>
                 <InputBoxes>
-                    <Input placeholder="Pick up location?"/>
-                    <Input placeholder="where to?"/>
+                    <Input placeholder="Pick up location?"
+                            value={pickup}
+                            onChange={(e)=>setPickup(e.target.value)}
+                    />
+                    <Input placeholder="where to?"
+                            value={dropof}
+                            onChange={(e)=>setdropof(e.target.value)}
+                    />
                 </InputBoxes>
                 <PlusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png"/>
             </InputContainer>
@@ -27,9 +36,11 @@ const search = () => {
                 <StarIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"/>
                 SavedPlaces
             </SavedPlaces>
+            <Link href={{pathname:"/confirm",query:{pickup:pickup,dropof:dropof}}} passHref={true}>
             <ConfirmButton>
                 Confirm location
             </ConfirmButton>
+            </Link>
         </Wrapper>
     )
 }
@@ -85,5 +96,5 @@ bg-gray-400 w-10 h-10 p-2 rounded-full mr-2
 `
 
 const ConfirmButton=tw.div`
-flex justify-center items-center bg-gray-900 mx-4 mt-2 h-10 text-white cursor-pointer rounded-sm
+text-center text-white bg-gray-900 mx-4 mt-2 px-4 py-3 cursor-pointer rounded-sm text-xl
 `
