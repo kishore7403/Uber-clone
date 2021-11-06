@@ -77,7 +77,7 @@ const RideContainer=tw.div`
 flex flex-col flex-1 h-1/2
 `
 const BackButton=tw.img`
-h-8 w-8 absolute z-10 bg-white rounded-full m-3
+h-8 w-8 absolute z-10 bg-white rounded-full m-3 cursor-pointer
 `
 const ConfirmButton=tw.div`
 text-center text-white bg-gray-900 mx-4 my-2 px-4 py-3 cursor-pointer rounded-sm text-xl border-t-2
