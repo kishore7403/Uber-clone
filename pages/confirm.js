@@ -10,6 +10,9 @@ const Confirm = () => {
     const router =useRouter();
     const {pickup,dropof}=router.query;
 
+    const[pickupCoordinates,setPickupCoordinates]=useState([0,0])
+    const[dropofCoordinates,setDropofCoordinates]=useState([0,0])
+
     const getPickUpCoordinates=(pickup)=>{
 
     fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?`+
@@ -44,8 +47,7 @@ useEffect(()=>{
 
 },[pickup,dropof])
 
-const[pickupCoordinates,setPickupCoordinates]=useState()
-const[dropofCoordinates,setDropofCoordinates]=useState()
+
 
     return (
         <Wrapper>
@@ -55,7 +57,8 @@ const[dropofCoordinates,setDropofCoordinates]=useState()
             <Map pickupCoordinates={pickupCoordinates}
                 dropofCoordinates={dropofCoordinates}/>
             <RideContainer>
-                <RideSelector/>
+                <RideSelector pickupCoordinates={pickupCoordinates}
+                dropofCoordinates={dropofCoordinates} />
                 <ConfirmButtonContainer>
                     <ConfirmButton>
                         Confirm
