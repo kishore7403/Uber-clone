@@ -7,13 +7,13 @@ const Login = () => {
 
     const router = useRouter()
     useEffect(() => {
-        
-        onAuthStateChanged(auth,user=>{
-            if(user){
-                router.push('/')
-            }
-        })
-    }, []) 
+
+            onAuthStateChanged(auth, user => {
+                if (user) {
+                    router.push('/');
+                }
+            });
+        }, []) 
 
     return (
         <Wrapper>
